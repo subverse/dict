@@ -1,0 +1,19 @@
+<% @ind_cat = config("cat")%>
+<% @ind_grm = config("grm")%>
+<% @ind_font = config("font")%>
+<% @ind_tib = config("tib")%>
+
+<table>
+  <%= render :partial => "layouts/header" %>   
+  <% vcs.each do |voc| %>   
+	<% @v = voc %>
+    <% if vcs.length > 0 %>	  
+      <tr class="<%= cycle("odd", "even") %>">
+    <% else %>	
+      <tr>	  
+	<% end %>		
+		<%= render :partial => "layouts/voc_gwgc" %>
+		<%= render :partial => "layouts/voc_ops" %>
+      </tr>	          	
+  <% end %> 
+</table>

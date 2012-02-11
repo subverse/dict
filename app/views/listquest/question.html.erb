@@ -1,0 +1,42 @@
+<!--# content for in index einfügen - d.h. content for in content_for ???-->
+<% content_for :info do %>  
+  <h2>direction : <%= @dir %></h2> 
+  <h2>order : <%= @order %></h2> 
+<% end %>	
+
+<% if @item != nil %>
+	<div id="form">	
+		<% form_remote_tag :url => { :action => "check" }, :update => "cont_div" do %>		
+			<% if @dir == "td" %>	
+				<font size="+20"><%= convert(@item.content1) %></font>		
+			<% end %>			
+			<table class="table1">				  
+				<tr> 			
+					<% if @dir == "td" %>	
+						<td> <%= image_tag("tibflag_icon1.png") %> </td>
+					<% else %>	
+					    <td> <%= image_tag("deflag_icon.png") %> </td>
+					<% end %>	
+					<td> <%= text_field_tags( "request", @item.content1, "white" ) %> </td>
+				</tr>
+				<tr> 
+					<% if @dir == "td" %>	
+						<td> <%= image_tag("deflag_icon.png") %> </td>
+					<% else %>	
+					    <td> <%= image_tag("tibflag_icon1.png") %> </td>
+					<% end %>
+					<td> <%= text_field_tags( "answer", "", "gray" ) %> </td>	
+					<td> <%= my_submit_tag('ok') %>	</td>
+				</tr>		
+			</table>						 						
+		<% end %>	
+		<div class = "line"></div>	
+		<div class="conf_item">
+			<%= my_link_to("Abbrechen", "listquest", "index", 1) %>
+		</div>					
+	</div>	
+<% else %>
+  	<h1>Abfrage beendet</h1>
+  	<br/><br/>
+	<%= my_link_to("Wiederholen", "listquest", "index", 1) %>	
+<% end %>

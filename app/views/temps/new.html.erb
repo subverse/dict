@@ -1,0 +1,50 @@
+<h1>Add to Temp<br><br></h1>
+<div id="form">
+<%= error_messages_for :temp %>
+						  
+<% form_for @temp, :url => { :action => "create" } do |f| %>
+    
+  <% b = "background-color : #FFFFFF ; border : none" %>    
+  
+	<table class="table1">
+	
+	<tr>
+    <td><b>Satz Nr.</b></td>
+		<td><b>:<b></td>
+    <td><%= f.text_field :sentence, :maxlength => "2", :class => "text_field" %></td>
+  </tr>
+	
+  <tr>
+    <td><b>Tibetisch</b></td>
+		<td><b>:<b></td>
+    <td><%= f.text_field :wylie, :style=>"#{b}" %></td>
+  </tr>
+  
+  <tr>
+    <td><b>Deutsch</b></td>
+		<td><b>:<b></td>
+    <td><%= f.text_field :german, :style=>"#{b}" %></td>
+  </tr>
+  
+  <tr>
+    <td><b>Grammatik</b></td>
+		<td><b>:<b></td>
+    <td><%= f.text_field :grm, :style=>"#{b}" %></td>
+  </tr>
+
+  <tr>
+    <td><b>Kategorie</b></td>
+		<td><b>:<b></td>
+    <td><%= f.text_field :cat, :style=>"#{b}" %></td>
+  </tr> 
+	
+	<tr>
+    <td><b>Notiz</b></td>
+		<td><b>:<b></td>
+    <td><%= f.text_field :note, :style=>"#{b}"  %></td>
+  </tr> 
+	</table> 
+		
+	<%= my_submit_tag 'ok' %>
+<%end%>
+</div>

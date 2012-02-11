@@ -1,0 +1,8 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						:h1 => "" ,	:h2 => "Neuen Eintrag anlegen",
+						:plain => "" } %>
+<h1>new</h1>
+<br/><br/>
+<%= render :partial => "new_edit", :locals => {:url => {:action => "create"},
+																																		:mode => "new",	
+																																		:submit_text => "ok"} %>

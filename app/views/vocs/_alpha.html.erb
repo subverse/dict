@@ -1,0 +1,4 @@
+<%= link_to_remote title, :url => { :controller => "vocs", :action => "alpha", :a => a },
+									:update => { :success => "erg", :failure => "erg"},
+                                    :before => "$('erg').update('Laden...')",
+									:html => { :class => "link_ext" }  %>

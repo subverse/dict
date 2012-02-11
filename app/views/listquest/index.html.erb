@@ -1,0 +1,51 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "eList", 
+						    :h2 => "Abfrage", :plain => "" } %>
+
+<% if @info != nil %>
+  <h2><%= @info %></h2>
+<% else %>
+  <div id="cont_div">
+	<% form_remote_tag :url => { :action => "start" }, :update => "cont_div" do %>
+
+		<div id="form">  
+			<div class="conf_item_left">  
+				<h2>Richtung</h2>
+				<div class="line"></div>  
+				<table class="table1">  
+					<tr>
+						<td>tibetisch-deutsch</td>            
+						<td><%= radio_button_tag( :dir, "td", true )%></td>     
+					</tr>        
+					<tr>
+						<td>deutsch-tibetisch</td>            
+						<td><%= radio_button_tag( :dir, "dt" )%></td>     
+					</tr>       
+				</table>      
+			</div><!--conf_item_left-->  
+    
+			<div class="conf_item">
+				<h2>Ordnung</h2>
+				<div class="line"></div>
+				<table class="table1">  
+					<tr>
+						<td>zuf&auml;llig</td>            
+						<td><%= radio_button_tag( :order, "random", true )%></td>     
+					</tr>
+					<tr>
+						<td>absteigend</td>            
+						<td><%= radio_button_tag( :order, "straight" )%></td>     
+					</tr>
+					<tr>
+						<td>aufsteigend</td>            
+						<td><%= radio_button_tag( :order, "reverse" )%></td>     
+					</tr>            
+				</table>     
+			</div><!--conf_item-->  
+			<div></div>  			
+			<%= my_submit_tag "Ok" %>            
+		</div><!--form-->  
+  
+	<% end %><!--form_tag-->   
+  </div>
+<% end %>  

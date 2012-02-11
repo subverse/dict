@@ -1,0 +1,11 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "",
+						    :h2 => "Eintrag editieren", 
+						    :plain => "ID : #{@category.id}" } %>
+						    
+<h1>edit</h1>
+<br><br>
+<%= render :partial => "new_edit",
+				:locals => {:url => {:action => "update",
+									:id => @category.id},
+									:submit_text => "ok"} %>

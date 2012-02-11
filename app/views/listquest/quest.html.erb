@@ -1,0 +1,10 @@
+<% content_for :info do %>  
+  <h2>direction : <%= @dir %></h2> 
+  <h2>order : <%= @order %></h2> 
+<% end %>	
+<h1>Start</h1>
+<div id="cont_div">
+	<% form_remote_tag :url => { :action => "question" }, :update => "cont_div" do %>
+		<td> <%= my_submit_tag('OK') %> </td>
+	<% end %>
+</div>

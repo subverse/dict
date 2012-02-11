@@ -1,0 +1,16 @@
+<ul id = "eList" title="eList" selected="true">
+	<% if @cookie %>
+		<li class="group" > <%= @list.length %> Eintr&auml;ge </li>
+		<% @list.each do |voc| %>
+			<li>
+				<%= link_to "#{voc.german}",
+					:controller => :iphones, 
+					:action => :show_voc, 
+					:id => voc.id %>
+				[<%= voc.wylie  %>]				
+			</li>	
+		<% end %> 	
+	<% else %>	
+		<li class="group" >Hinweis : Zum Nutzen der eList m&uuml;ssen Cookies aktiviert sein!</li>	
+	<% end %>
+</ul>

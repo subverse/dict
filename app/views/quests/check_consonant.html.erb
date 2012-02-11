@@ -1,0 +1,16 @@
+<% @title = "quest" %>
+
+<br/><br/><br/>
+
+<font size="+20"><b><%= @hex %></b></font></i></font></i>
+
+<br>
+<% form_remote_tag :url => { :action => "consonant" }, :update => "cont_div" do %>   
+  <%= text_field_tags( "consonant", @consonant, "invis" ) %>
+  <b><%= text_field_tags( "correct_wylie", @wylie, "white" ) %></b> <br/><br/>
+  <%= my_submit_tag('continue') %>
+<% end %>
+
+<br/><br/>
+<%= render :partial => "link_to_quit" %> </p>
+

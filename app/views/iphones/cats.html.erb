@@ -1,0 +1,10 @@
+<ul id = "cat" title="Kategorien" selected="true">
+	<% @categories.each do |category| %>
+		<li>
+			<%= link_to "#{category.cat} (#{@h_cats_n.pop})",
+				:controller => :iphones, 
+				:action => :show_cats, 
+				:id => category.id %>			
+		</li>	
+	<% end %> 	
+</ul>

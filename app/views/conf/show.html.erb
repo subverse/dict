@@ -1,0 +1,42 @@
+<% content_for :info do %>  
+  <h1>Config</h1>
+  <h2>Your settings</h2>
+<% end %>	
+
+<div id="form">
+  <div class="conf_item_left">    
+    <h2>Font settings</h2>
+    <div class="line"></div>
+    <table class="table1">        
+      <tr>
+        <td>font installed</td>  
+        <td>:</td>
+        <td><%= @font %></td>     
+      </tr>      
+    </table>                 
+  </div><!--conf_item_left-->
+
+  <div class="conf_item">    
+    <h2>Table settings</h2>
+    <div class="line"></div>
+    <table class="table1">  
+      <tr>
+        <td>show category </td>
+        <td>:</td>
+        <td><%= @cat %></td>    
+      </tr>
+      <tr>
+        <td>show grammar</td>  
+        <td>:</td>
+        <td><%= @grm %></td>  
+      </tr>        
+      <tr>
+        <td>tibetan glyphs</td>  
+        <td>:</td>
+        <td><%= @tib %></td>    
+      </tr>   
+    </table>        
+  </div><!--conf_item-->
+  <div></div>
+  <%= my_link_to("change","conf","index",1) %>    
+</div><!--form-->

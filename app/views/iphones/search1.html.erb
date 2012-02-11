@@ -1,0 +1,25 @@
+<ul id = "wylie" title="Ergebnis" selected="true"%>
+	<li class="group" ><%= @search %> (<%= @vocs.length %>)</li>
+	<% @vocs.each do |voc| %>
+		<li>
+			<%= link_to "#{voc.german}",
+				:controller => :iphones, 
+				:action => :show_data, 
+				:params => { :val=> voc.german, :lang => 'german'  }, 
+				:id => voc.id %>			
+		</li>	
+	<% end %> 		
+	<li class="group" ><%= @search + "..." %> (<%= @num_rest_rows %>)</li>
+	<% if @num_rest_rows!=0 %>
+		<% @vocs_rest.each do |voc| %>
+			<li>
+				<%= link_to "#{voc.wylie}",
+					:controller => :iphones, 
+					:action => :show_voc, 
+					:id => voc.id %>
+				[<%= voc.german %>]
+			</li>	
+		<% end %> 
+	<% end %>	
+</ul>	
+

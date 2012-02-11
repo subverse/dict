@@ -1,0 +1,35 @@
+<% @title = "fkt" %>
+<%= stylesheet_link_tag 'fkt' %>	
+<%= javascript_include_tag :defaults %>
+
+<div id="header">
+  
+  <div class="logo">
+    <%= image_tag "fkt_logo_109x150.png" %>    
+  </div>
+
+  <div class="header-title">
+    Fernkurs Tibetisch
+  </div>
+
+  <div class="header-subtitle">
+
+    Studienprogramm der tibetischen Umgangs- und Schriftsprache
+  </div>
+
+</div>
+
+<div id="menu">  
+  <ul class="menu">
+    <% url = {:controller => "generals", :action => "fkt_info", :id => 1} %>
+    <li class="menu"><%= linkToRemote("info", url, "content") %></li>
+    <% for i in 1..6 %>
+      <% url = {:controller => "generals", :action => "fkt_L#{i}", :id => 1} %>
+      <li class="menu"><%= linkToRemote("Lektion #{i}", url, "content") %></li>       
+    <% end %>
+  </ul>  
+</div>
+
+<div id="content">
+  <%= render :partial => 'fkt_info' %>
+</div>

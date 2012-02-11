@@ -1,0 +1,35 @@
+<% if @vocs != nil or @quests != nil %>  	
+<br>
+  <table>      
+    <thead>   
+		  <th>German</th>
+      <th>Wylie</th>
+      <th>Grammar</th>
+      <th>Category</th>    
+  	  <th>ok</th>
+	    <th>rep</th>
+    </thead>
+    <% @vocs.each do |voc| %>
+      <% quest = @quests.pop %>
+			<% if quest.ok != 0 %>
+				<% ok = 1 %>
+			<% else %>
+				<% ok = 0 %> 
+			<% end %>  
+			<% if quest.rep < 0 %>
+				<% rep = (-1)*quest.rep %>
+			<% else %>
+				<% rep = quest.rep %> 
+			<% end %>
+			<% %>
+      <tr class="<%= cycle("odd", "even") %>">  
+				<td> <%=h voc.german %> </td>
+        <td> <%=h voc.wylie %> </td>
+        <td> <%=h voc.grm %> </td>
+        <td> <%=h voc.cat %> </td>  	
+	    <td> <%=h ok %> </td>
+	    <td> <%=h rep %> </td>  		  
+      </tr>	
+    <% end %> 
+  </table>
+<% end %>

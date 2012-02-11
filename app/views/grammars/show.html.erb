@@ -1,0 +1,20 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "Grammatik",
+						    :h2 => "#{@grammar.grm} (#{@num_rows})", 
+						    :plain => "" } %>
+
+
+<% if @grammar.note != nil %>
+  <% if @grammar.note.length >=  1 %>
+    <h2><%= @grammar.note %></h2>
+    <br><br>
+  <% end %>  
+<% end %> 
+
+<%= render :partial => "layouts/list", :locals => {:vcs => @vocs} %>
+
+<%if admin? %>
+  <br>
+  <p><td><%= my_link_to_edit(edit_grammar_path(@grammar)) %></td></p>    	
+<%end %>
+<br>

@@ -1,0 +1,11 @@
+<ul id = "show_cat" title=<%= "#{@category.cat}" %> selected="true">
+	<% @vocs.each do |voc| %>
+		<li>
+			<%= link_to "#{voc.german}",
+				:controller => :iphones, 
+				:action => :show_voc, 
+				:id => voc.id %>
+			[<%= voc.wylie %>]		
+		</li>	
+	<% end %> 		
+</ul>	

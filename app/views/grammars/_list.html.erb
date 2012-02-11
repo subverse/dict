@@ -1,0 +1,13 @@
+<table class="table1">  
+<% @grammars.each do |grammar| %>
+  <tr>	      
+    <td><%= h grammar.grm %></td>   
+    <td><%= "(#{@h_grms_n.pop})" %></td>	
+    <td><%= my_link_to_show(grammar) %></td>		
+	<%if admin? %>
+      <td><%= my_link_to_edit(edit_grammar_path(grammar)) %></td>
+      <td><%= my_link_to_drop(grammar,"grm") %></td>			  
+	<%end %>	
+  </tr>	
+<% end %> 
+</table>

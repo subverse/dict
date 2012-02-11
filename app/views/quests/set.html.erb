@@ -1,0 +1,10 @@
+<% @title = "set quest" %>
+<h1>confirm<br><br></h1>
+
+<%= @elems.length %><br>
+<%= @grm %><br>
+<%= @cat %><br>
+
+<% form_remote_tag :url => {:action => "question", :id => 1} do %>   
+    <%= my_submit_tag('ok') %>
+<% end %>

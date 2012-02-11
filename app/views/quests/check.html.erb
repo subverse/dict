@@ -1,0 +1,46 @@
+<% @title = "quest" %>
+
+<br/><br/><br/>
+<div id="form">
+<% if @indicator == false %>
+  <div id="red">      
+    <h1><%= @indicator %></h1> 
+  </div>  
+<% else %>  
+  <div id="green">      
+    <h1><%= @indicator %></h1> 
+  </div>  
+<% end %>  
+<br>
+<hr>
+<br>
+<h3>Abfrage : <font size="+20"><%= convert(@wylie) %></font> </h3>
+<h3>Eingabe : <%= @german%> </h3>
+<% if @voc != nil %>
+  <br>
+  <h3>L&ouml;sung </h3> 
+  <table class="table1">      
+    <thead>    
+      <th>German</th>
+      <th>Wylie</th>
+      <th>Grammar</th>
+      <th>Category</th>    
+    </thead>
+  
+      <tr>       
+        <td> <%=h @voc.german %> </td> 
+        <td> <%= @voc.wylie %> </td>
+        <td> <%=h @voc.grm %> </td>
+        <td> <%=h @voc.cat %> </td>  	        		
+      </tr>	  
+  </table>
+<% end %>
+<% form_remote_tag :url => { :action => "question", :id => 1 }, :update => "cont_div" do %>   
+  <div id="submit_btn">
+    <%= my_submit_tag('ok') %>
+	</div>	
+<% end %>
+<br>
+<%= render :partial => "link_to_quit" %>
+<br>
+</div>

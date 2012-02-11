@@ -1,0 +1,42 @@
+<div id="form">	
+	<% if @check == true %>
+		<div id="green">		
+			<h1><%= @check %></h1>
+		</div>	
+	<% else %>		
+		<div id="red">
+		    <h1><%= @check %></h1>
+		</div>				
+	<% end %>		
+	<div class = "line"></div>
+	<% form_remote_tag :url => { :action => "question" }, :update => "cont_div" do %>	
+		<% if @dir == "td" %>	
+			<font size="+20"><%= convert(@request) %></font>								
+		<% else %>	
+			<font size="+20"><%= convert(@correct) %></font>
+		<% end %>
+		<table class="table1">				  
+			<tr> 			
+				<% if @dir == "td" %>	
+					<td> <%= image_tag("tibflag_icon1.png") %> </td>
+				<% else %>	
+				    <td> <%= image_tag("deflag_icon.png") %> </td>
+				<% end %>	
+				<td> <%= text_field_tags( "request", @request, "white" ) %> </td>
+			</tr>
+			<tr> 
+				<% if @dir == "td" %>	
+					<td> <%= image_tag("deflag_icon.png") %> </td>
+				<% else %>	
+				    <td> <%= image_tag("tibflag_icon1.png") %> </td>
+				<% end %>
+				<td> <%= text_field_tags( "answer", @correct, "white" ) %> </td>									
+			</tr>		
+		</table>
+		<div class = "line"></div>	
+		<div class="conf_item_left">		
+			<%= my_submit_tag('ok') %> 
+		</div>							
+	<% end %>							
+</div>			
+

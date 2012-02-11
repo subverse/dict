@@ -1,0 +1,64 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+										:h1 => "" , :h2 => "",
+										:plain => "ID : #{@voc.id}" } %>	
+
+<% if config("font") %>
+  <font size="+20"><%= @t %></font>
+<% end %>  
+
+<table class="table1">
+  <tr>
+    <td><b>Deutsch</b></td>	
+	<td><b>:</b></td>
+	<td><%=h @voc.german %></td>
+  </tr>	
+  <tr>
+	<td><b>Tibetisch</b></td>
+	<td><b>:</b></td>
+	<td><%=h  @voc.wylie %></td>
+  </tr>	
+  <tr>	
+	<td><b>Grammatik</b></td>
+	<td><b>:</b></td>
+	<td><%=h @voc.grm %></td>
+  </tr>
+  <tr>
+	<td><b>Kategorie</b></td>
+	<td><b>:</b></td>
+	<td><%=h @voc.cat %></td>
+  </tr>
+  <tr>
+	<td><b>Notiz</b></td>	
+	<td><b>:</b></td>
+	<td><%=h @voc.note %></td>
+  </tr>
+</table>
+<p>
+  <%if user? %>  
+    <br>
+    <%= my_link_to_temp(@voc) %>
+    <%if admin? %>
+      <%= my_link_to_edit(edit_voc_path(@voc)) %>
+      <%= my_link_to_drop(@voc,"voc") %>
+    <% end %>  	
+  <%else%>  
+    <%= my_link_to_eList(@voc) %>
+	<br/><br/>
+  <%end%>
+</p>
+
+<% if @vocs_syn_de.length > 0 %>      
+    <div class="line"></div>
+	<div align="left">       	 
+		<h4>Deutsch<br><br></h4>			
+	</div>	
+	<%= render :partial => "layouts/list", :locals => {:vcs => @vocs_syn_de} %>	
+<% end %>
+
+<% if @vocs_syn_tib.length > 0 %>  
+    <div class="line"></div>
+	<div align="left">       	 
+		<h4>Tibetisch<br><br></h4>			
+	</div>
+    <%= render :partial => "layouts/list", :locals => {:vcs => @vocs_syn_tib} %>			
+<% end %>

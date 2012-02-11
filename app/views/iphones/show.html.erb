@@ -1,0 +1,26 @@
+<div id="details" class="panel" title="Details" selected="true">	
+	<div class="item">	
+		Deutsch :
+		<h3> <%=h @voc.german %> </h3>
+		<div class="line"></div>	
+		Wylie :
+		<h3> <%=h @voc.wylie %> </h3>		
+	</div>
+	<div class="item">
+		Grammatik :
+		<h3> <%=h @voc.grm %> </h3>
+		<div class="line"></div>	
+		Kategorie :
+		<h3> <%=h @voc.cat %> </h3>		
+	</div>
+	<div class="item">
+		Notiz :
+		<h3> <%=h @voc.note %> </h3>		
+	</div>	
+	<div class="conf_item_left">
+		<p> <%= my_link_to_eList_48(@voc) %> </p>	
+	</div>
+	<div class="conf_item">
+		<p> <%= my_link_to_view_eList_48 %> </p>	
+	</div>
+</div>

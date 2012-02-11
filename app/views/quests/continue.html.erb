@@ -1,0 +1,6 @@
+<% @title = "continue quest" %>
+<h1>continue quest<br><br></h1>
+
+<% form_remote_tag :url => {:action => "question"},  :update => "cont_div" do %>   
+    <%= my_submit_tag('ok') %>
+<% end %>

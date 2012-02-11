@@ -1,0 +1,24 @@
+<div id="form">
+<%= error_messages_for :user %>
+
+<% form_for @user, :url => url do |f| %>
+  <p>
+    <b>name</b><br />
+    <%= f.text_field :name, :class => "text_field" %>   
+  </p>
+
+  <p>
+    <b>pass</b><br />
+    <%= f.password_field :pw, :class => "text_field" %>
+  </p>
+  
+  <p>
+    <b>access</b><br />
+    <%= f.text_field :access, :class => "text_field" %>
+  </p>
+   
+  <div id="submit_btn">
+    <%= my_submit_tag submit_text %>
+  </div>
+<% end %>
+</div>

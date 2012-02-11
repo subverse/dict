@@ -1,0 +1,28 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "Kategorien",
+						    :h2 => "#{@category.cat} (#{@num_rows})", 
+						    :plain => "" } %>
+
+<% if @category.note != nil %>
+  <% if @category.note.length >=  1 %>
+    <h2><%= @category.note %></h2>
+    <br>
+  <% end %>  
+<% end %>  
+
+<%= render :partial => "layouts/list", :locals => {:vcs => @vocs} %>
+<br>
+
+<% if @category.cat == "Zahl" %>
+  <div class="line"></div><br/>
+  <h4>Weitere Zahlen:</h4>
+  <p>     
+    <% form_remote_tag :update => "num_div",
+	  			       :url => {:action => "get_number"} do %>  
+      <%= text_field_tag "num", "", :class => "text_field" %>
+      <%= my_submit_tag "suchen" %>   
+    <% end %>
+    <br/>
+    <div id="num_div"></div>
+  </p>  
+<% end %>

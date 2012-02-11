@@ -1,0 +1,10 @@
+<ul id = "grm" title="Grammatik" selected="true">
+	<% @grammars.each do |grammar| %>
+		<li>
+			<%= link_to "#{grammar.grm} (#{@h_grms_n.pop})",
+				:controller => :iphones, 
+				:action => :show_grms, 
+				:id => grammar.id %>			
+		</li>	
+	<% end %> 	
+</ul>

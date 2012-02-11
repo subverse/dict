@@ -1,0 +1,5 @@
+<%= link_to_remote title, :method => :get,
+																			:url => { :action => :show, :link_cat => link_cat	},
+																			:html => {:class => "link_cat"},	
+																			:update => "container_links_ext" %>
+<br/>

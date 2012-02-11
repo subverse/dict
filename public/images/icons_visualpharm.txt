@@ -1,0 +1,9 @@
+info, drop, temp, edit 
+Author:	VisualPharm (Ivan Boyko)
+Homepage:	http://www.visualpharm.com
+Service:	Design service for custom icons.
+Please contact author to request a quote.
+License:	Linkware
+Commercial usage: Allowed
+Readme: License.txt
+A link to visualpharm.com is required.

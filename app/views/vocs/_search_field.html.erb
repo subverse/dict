@@ -1,0 +1,16 @@
+<div id="suchfeld">
+	<div id="img_cont">
+		<%= image_tag(img) %>
+	</div>
+	<div id="input_cont">
+	  <div id="input_field">
+		  <% form_remote_tag :update => "erg", :url => { :controller => "vocs", :action => action}, 
+                         :before => "$('erg').update('Laden...')" do %>  	  
+			  <%= text_field_tag tag, "", :class => "search_field" %>	
+		</div>	
+		<div class="search_btn">
+				<%= image_submit_tag("find_icon.png") %>			
+			<% end %>
+		</div>			  		  
+	</div>
+</div>

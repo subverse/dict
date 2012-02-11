@@ -1,0 +1,79 @@
+
+#form{
+  float:left;
+  width:auto;
+  height:auto;
+  padding:5px;
+  border:none;  
+  -moz-border-radius:10px;
+  -webkit-border-radius:30px;    
+}
+
+.item{
+	margin-top: 7px;
+	margin-bottom: 7px;
+	padding: 7px;
+	border: 1px solid grey;
+	background-color: #fff;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;	
+}
+
+/*--------------------------------CONFIG------------------------------*/
+
+.conf_item_left{
+  float:left;  
+  margin-top:3px;
+}
+
+.conf_item{
+  float:left;  
+  margin-left:3px;
+  margin-top:3px;
+}  
+
+/*------------------------------LINES---------------------------------*/
+
+.line{
+  width:100%;
+  height:1px;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-top:1px solid grey; 
+}
+
+/*--------------------------listquest_indicators----------------------*/
+
+#red{
+  background-color:red;
+  width:auto;
+  height:auto;
+  color:white;
+  text-align:center;
+  -moz-border-radius:3px;  
+  -khtml-border-radius:3px;
+}
+
+#green{
+  background-color:green;
+  width:auto;
+  height:auto;
+  color:white;
+  text-align:center;  
+  -webkit-border-radius:10px;
+}
+
+/*-----------------------------Suchfeld-------------------------------*/
+
+.search_field{
+	border:none;
+	background-color: white;
+	width:137pt;	
+	margin:0px;
+	padding:0px;	
+	height:35px;
+	font-size:22pt;	
+	vertical-align:top;	
+	-moz-border-radius:5px;  	
+	-webkit-border-radius:5px;
+}

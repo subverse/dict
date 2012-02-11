@@ -1,0 +1,11 @@
+<% content_for :info do %>  
+  <%= "Deine Vokabeln" %> 
+<% end %>		
+
+<ol>
+<% @list.each do |item| %>
+  <li> 
+    <%= item.german %>, <%= item.wylie %>
+  </li>  
+<% end %>
+</ol>

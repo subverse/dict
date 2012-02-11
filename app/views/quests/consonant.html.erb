@@ -1,0 +1,28 @@
+<% @title = "quest" %>
+
+<br/><br/><br/>
+
+<%= error_messages_for :quest %>
+
+<font size="+20"><b><%= @hex %></b></font></i></font></i>
+
+<% form_remote_tag :url => { :action => "check_consonant" }, :update => "cont_div" do %> 
+  <table class="table1">   
+	  <tr>
+		  <td> Nr. </td> 
+			<td> : </td> 
+			
+			<td> <%= text_field_tags( "consonant", @consonant, "white" ) %> </td>
+		</tr>
+		<tr>
+		  <td> Wylie </td> 
+			<td> : </td>
+			<td> <%= text_field_tags( "wylie", "", "short" ) %> </td>			
+		</tr>
+		<tr>
+      <td>		<%= my_submit_tag('ok') %> </td>
+	  </tr> 
+  </table>			        				
+<% end %>
+<br>
+<%= render :partial => "link_to_quit" %> </p>

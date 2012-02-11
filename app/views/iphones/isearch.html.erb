@@ -1,0 +1,17 @@
+<div id="isearch" class="panel" title="Suche" selected="true">		
+	<%= image_tag("deflag_icon.png") %>		
+	<% form_remote_tag :update => "erg", 
+			:url => { :controller => "iphones", :action => :search }, 		
+			:before => "$('erg').update('Laden...')" do %>  				
+		<%= text_field_tag :german, "", :class => "search_field" %>								
+		<%= submit_tag("go") %>	
+	<% end %>											  		  		
+	<br><br>
+	<%= image_tag("tibflag_icon1.png") %>			
+	<% form_remote_tag :update => "erg", 
+			:url => { :controller => "iphones",	:action => :search1 }, 
+			:before => "$('erg').update('Laden...')" do %>  	  
+		<%= text_field_tag :search1, "", :class => "search_field" %>						
+		<%= submit_tag("go") %>			
+	<% end %>	 
+</div>

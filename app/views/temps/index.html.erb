@@ -1,0 +1,37 @@
+<% content_for :info do %>  
+  <h1><%= "Temp (#{@temps.length})" %></h1>
+<% end %>		
+
+<% @page_title = "Temp" %>
+<br><br>
+<% if @temps.length > 0 %>  
+  <table>  
+    <thead>  
+		<th>Satz</th>
+		<th>Deutsch</th>
+		<th>Tibetisch</th>
+		<th>Grammatik</th>
+		<th>Kategorie</th>    		  
+	</thead>	
+	<% s1 = 0 %>	
+	<% boole = false %>
+    <% @temps.each do |temp| %>  
+      <% s2 = temp.sentence %>
+	    <% if s1 != s2 %>
+		  <% s1 = temp.sentence %>			  
+		  <tr class="new_sentence">		
+		<% else %>  
+      <tr class="<%= cycle("odd", "even") %>">  		   	  
+    <% end %>		    		
+	    <td> <%=h temp.sentence %> </td>
+      <td> <%=h temp.german %> </td> 
+      <td> <%=h temp.wylie %> </td>
+      <td> <%=h temp.grm %> </td>
+      <td> <%=h temp.cat %> </td>	
+	    <td> <%= my_link_to_show(temp) %> </td>
+			<td> <%= my_link_to_drop(temp,"temp") %> </td>	    				
+	  </tr>			  
+    <% end %> 
+  </table>
+  <%= button_to "clear", {:controller => "temps", :action => "clear", :id => 1}, :class => "link_button" %>  
+<% end %>  

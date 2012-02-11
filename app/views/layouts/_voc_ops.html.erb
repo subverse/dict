@@ -1,0 +1,10 @@
+<td class="td1"> <%= my_link_to_show(@v) %> </td>		
+<%if user? %>
+ <td class="td1"> <%= my_link_to_temp(@v) %> </td>   
+<% else %>  
+  <td class="td1"> <%= my_link_to_eList(@v) %> </td>
+<% end %>  
+<%if admin? %>
+  <td class="td1"> <%= my_link_to_edit(edit_voc_path(@v)) %> </td>  
+  <td class="td1"><%= my_link_to_drop(@v,"voc") %></td>  
+<% end %>

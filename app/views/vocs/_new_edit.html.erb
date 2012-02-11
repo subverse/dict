@@ -1,0 +1,42 @@
+<%= error_messages_for :voc %>
+<div id="form">
+<% form_for @voc, :url => url do |f| %>
+  <p>
+    <b>Wylie</b><br />
+    <%= f.text_field :wylie, :class => "text_field" %>	
+  </p>
+
+  <p>
+    <b>German</b><br />
+    <%= f.text_field :german, :class => "text_field" %>
+  </p>
+  
+  <p>
+    <b>Grm</b><br />    
+    <%= f.select( "grm", @grms, {:include_blank => true}, html_options = {:class => "select_field"}) %>
+  </p>
+  
+  <p>
+    <b>Cat</b><br />    
+    <%= f.select( "cat", @cats ,{:include_blank => true} , html_options = {:class => "select_field"} ) %>
+  </p> 
+
+  <p>
+    <b>Src</b><br />
+    <%= f.text_field :src, :class => "text_field" %>
+  </p>
+  
+  <p>
+    <b>Note</b><br />
+    <%= f.text_area :note, :rows => 7, :class => "text_field" %>
+  </p>
+    
+  <div id="submit_btn">
+	  <% if mode == "edit" %>	
+		  <%=  submit_tag "ok", :style => "border:none; width:48pt", :onclick => "return #{confirm_javascript_function("Eintrag editieren ?")}" %>
+		<% else %>
+      <%= my_submit_tag submit_text %>		 
+		<% end %>
+  </div>
+<% end %>
+</div>

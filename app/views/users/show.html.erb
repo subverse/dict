@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td> id : </td>
+    <td> <%= @user.id %><br> </td>
+  </tr>  
+  <tr>
+    <td> name :  </td>
+    <td> <%= @user.name %> </td>        
+  </tr>
+  <tr>
+    <td> access : </td>
+    <td> <%= @user.access %> </td>
+  </tr>  
+</table>  
+<%= my_link_to_edit( edit_user_path(@user) ) %>
+<%= my_link_to_path( 'Back', users_path ) %>
+
+

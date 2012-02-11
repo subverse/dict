@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  
+<html>  
+  <head>
+    <meta http-equiv="Content-type" content="text/html;
+    charset=utf-8" />	
+	
+		<%= javascript_include_tag :defaults %>
+	
+    <title>Tibetisch - Deutsch W&ouml;rterbuch </title>  	
+
+    <%= stylesheet_link_tag 'quest' %>	    
+        
+  </head>
+
+  <body>   
+    <div id="container">
+      <div id="header_and_menubar">  <!--and sidebar-->
+    
+        <div id="header">        
+          <div id="top_0">                
+            <div id="flags"> </div>   
+            <div id="title"> 
+              <h1>Tibetisch-Deutsch W&ouml;rterbuch</h1> 
+            </div> 
+          </div>              
+          <div id="top_1">  </div>        
+          <div id="top_2">  </div>         
+        </div> <!--end header-->
+      
+        <div id="menubar">  
+          <%= my_link_to_path("Home", vocs_path)%>
+          |
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "Start", :action => :question, :id => 1, :update => "cont_div" }	%>
+          |
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "Add", :action => :new, :id => 1, :update => "add_div" }	%>	
+          |
+          <%= render :partial => "quests/link_to_remote_confirm", :locals => { :title => "Reset", :action => :reset_list, :id => 1, 
+																																							 :confirm => "Proceed to reset your Quest list ?", 
+                                                                               :update => "cont_div" }	%>
+ 	  
+          <%= render :partial => "quests/link_to_remote_confirm", :locals => { :title => "Clear", :action => :clear, :id => 1, 
+																																							 :confirm => "Proceed to CLEAR! your Quest list ?", 
+                                                                               :update => "cont_div" }	%>
+
+          <%= render :partial => "quests/link_to_remote_confirm", :locals => { :title => "Delete", :action => :delete, :id => 1, 
+																																							 :confirm => "Proceed to DELETE! your Quest list ?", 
+                                                                               :update => "cont_div" } %>
+          | 
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "All", :action => :all, :id=>1, :update => "cont_div" }	%>
+	
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "Ok", :action => :ok, :id=>1, :update => "cont_div" }	%>  
+
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "Repeat", :action => :rep, :id=>1, :update => "cont_div" }	%>  
+
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "Blanc", :action => :blanc, :id=>1, :update => "cont_div" }	%>
+          | 
+          <%= render :partial => "quests/link_to_remote_id", :locals => { :title => "Konsonanten", :action => :consonant, :id=>1, :update => "cont_div" }	%> 
+        </div> <!--end menubar-->             
+      </div> <!--end header_and_menubar-->
+            
+      <div id="content">      
+        <div id="erg">		         
+          <!--<h1><%= @page_title %></h1>-->
+          <%= yield %>	  
+        </div> <!--end erg-->
+      </div> <!--end content-->        
+    </div> <!--end container-->  
+    
+    <div id="footer">        
+      <div id="bottom_0">        
+        <div id="toggle">
+          | <%= link_to_function "printable", "$('flags').toggle(); $('menubar').toggle(); $('sidebar_search').toggle(); $('footer_links').toggle();",
+                                              {:class => "link_to" } %>                                                
+        </div> <!--end toggle-->          
+        <div id="footer_links">              	
+          &copy; 2009 tdwb.org
+          | <%= my_link_to("impressum","generals","impressum",1) %>	  				
+          | <%= my_link_to("links","generals","links",1) %>		  
+          | <%= link_to "top", "#", {:class => "link_to" } %>           
+          |
+          <% if user? %>        
+            <%= my_link_to_path("logout", logout_path)%>		
+            <% @user = User.find(session[:user_id])  %>
+            <%= @user.name %>
+            <% if admin? %>
+              <%= " (admin)" %>
+            <% end %>  
+          <% else %>        
+            <%= my_link_to_path("login", login_path)%>
+          <% end %> 	          
+        </div> <!--end footer_links-->                                                       
+      </div> <!--end bottom_0-->
+    </div> <!--end footer-->    
+  </body>  
+</html>

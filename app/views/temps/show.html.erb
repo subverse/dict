@@ -1,0 +1,41 @@
+<% content_for :info do %>  
+  <h1><%= "Temp" %></h1>
+  <h2><%= "Satz : #{@temp.sentence}" %></h2> 
+<% end %>	
+
+<font size="+20"><%= @t %></font>
+
+<table class="table1">
+  <tr>
+    <td><b>Deutsch</b></td>	
+	<td><b>:</b></td>
+	<td><%=h @temp.german %></td>
+  </tr>	
+  <tr>
+	<td><b>Tibetisch</b></td>
+	<td><b>:</b></td>
+	<td><%=h @temp.wylie %></td>
+  </tr>	
+  <tr>	
+	<td><b>Grammatik</b></td>
+	<td><b>:</b></td>
+	<td><%=h @temp.grm %></td>
+  </tr>
+  <tr>
+	<td><b>Kategorie</b></td>
+	<td><b>:</b></td>
+	<td><%=h @temp.cat %></td>
+  </tr>
+  <tr>
+	<td><b>Notiz</b></td>	
+	<td><b>:</b></td>
+	<td><%=h @temp.note %></td>
+  </tr>
+</table>
+<p>
+  <%if user? %>
+		<!--<%= my_link_to_edit(edit_temp_path(@temp)) %>-->
+    <%= my_link_to_drop(@temp,"voc") %>  
+		<br/><br/>
+  <%end%>
+</p>

@@ -1,0 +1,52 @@
+<% if @cookie %>
+	<% cookie_info = "Cookie : conf" %>
+<% else %>	
+	<% cookie_info = "Cookies vom Browser geblockt!" %>
+<% end %>
+
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "Einstellungen", 
+						    :h2 => cookie_info,
+							:plain => "" } %>
+
+<% form_tag(:action => "store") do %> 
+
+  <div id="form">  
+    <div class="conf_item_left">  
+      <h2>Font settings</h2>
+      <div class="line"></div>  
+      <table class="table1">         
+        <tr>
+          <td>tibetan font installed</td>  
+          <td><%= check_box_tag(:font, 1, @ind_font) %></td>     
+        </tr>
+      </table>      
+    </div><!--conf_item-->  
+    
+    <div class="conf_item">
+      <h2>Table settings</h2>
+      <div class="line"></div>
+      <table class="table1">  
+        <tr>
+          <td>show category </td>
+          <td><%= check_box_tag(:show_cat, 1, @ind_cat) %></td>    
+        </tr>
+        <tr>
+          <td>show grammar</td>  
+          <td><%= check_box_tag(:show_grm, 1, @ind_grm) %></td>  
+        </tr>        
+        <tr>
+          <td>show tibetan glyphs</td>  
+          <td><%= check_box_tag(:show_tib, 1, @ind_tib) %></td>    
+        </tr>   
+      </table>     
+    </div><!--conf_item-->  
+    <div></div>    
+    <% if @cookie %>  
+		<%= my_submit_tag "store" %>            
+	<% else %>		
+		<h3>Hinweis : Speichern ohne Cookies unm&ouml;glich!</h3>
+	<% end %>	
+  </div><!--form-->  
+  
+<% end %><!--form_tag-->   

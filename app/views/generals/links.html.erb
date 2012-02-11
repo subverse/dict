@@ -1,0 +1,26 @@
+<% content_for :info do%>
+  <h1><%= "Weblinks" %></h1>
+<% end %>
+
+<div id="container_links_web">
+  <div id="container_links_cat">
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Dharma", :link_cat => "dharma"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "W&ouml;rterb&uuml;cher", :link_cat => "dictionaries"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Broadcasting", :link_cat => "broadcasting"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Lernen", :link_cat => "lernen"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Tibet", :link_cat => "tibet"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Software", :link_cat => "tools"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Tech", :link_cat => "tech"} %>
+
+                <%= render :partial => "link_to_remote", :locals => {:title => "Natur", :link_cat => "natur"} %>
+
+  </div>
+  <div id="container_links_ext">   </div>
+</div>

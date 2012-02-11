@@ -1,0 +1,41 @@
+<% if vcs.length > 0 %>
+
+  <% @ind_cat = config("cat")%>
+  <% @ind_grm = config("grm")%>
+  <% @ind_font = config("font")%>
+  <% @ind_tib = config("tib")%>
+
+  <% i = 0 %>
+  <table>
+    <%= render :partial => "layouts/header" %>
+    <% vcs.each do |voc| %>
+      <% i = i+1 %>
+      <% @v = voc %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <%= render :partial => "layouts/voc_gwgc" %>
+        <td class="td1"> <%= my_link_to_show(@v) %> </td>
+        <td class="td1"> <%= link_to image_tag("drop.png", :border=>0), { :controller => :lists, :action => :del, :params => { :item => i }} %> </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <br><br>
+  <h3> Deine eList enth&auml;lt noch keine Eintr&auml;ge </h3>
+  <br />
+  <br />
+  <h2>Eintr&auml;ge hinzuf&uuml;gen</h2>
+  Eintr&auml;ge werden per <%= image_tag("temp.png", :border=>0)%>-Button hinzugef&uuml;gt.
+  <br />
+  Er befindet sich jeweils am rechten Ende einer jeden Tabellenzeile.
+
+  <br />
+  <br />
+  <h2>Einfacher Vokabeltrainer</h2>
+  Der Vokabeltrainer dient zur Abfrage der eList. Abfragen sind in beiden Richtungen m&ouml;glich.
+  <br />
+  Die eList muss zur Abfrage mindestens einen Eintrag enthalten.
+  <br />
+  Zum Ausführen des Vokabeltrainers einfach oben auf <b>abfragen?</b> klicken.
+
+
+<% end %>

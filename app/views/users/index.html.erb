@@ -1,0 +1,22 @@
+<!--<h1>Listing users</h1><br>-->
+<% @page_title = "Listing users" %>
+<br>
+<table>
+  <th>user_id</th>
+  <th>user</th>
+  <th>access</th>
+<% for user in @users %>
+  <tr>
+    <td><%=h user.id %></td>
+    <td><%=h user.name %></td>
+	<td><%=h user.access %></td>	
+    <td><%= my_link_to_show( user ) %></td>		
+    <td><%= my_link_to_edit( edit_user_path(user) ) %></td>
+    <td><%= my_link_to_drop( user, "user" ) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= my_link_to_path("new", new_user_path)%>

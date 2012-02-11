@@ -1,0 +1,29 @@
+<br><br>
+<br><br>
+<div id="form">
+<%= error_messages_for :quest %>
+
+<% if @quest != nil and @voc != nil%>
+
+	<% form_remote_tag :url => { :action => "check" }, :update => "cont_div" do %>
+		<%= text_field_tags( "qid", @quest.id, "invis" ) %>
+    
+		<font size="+20"><%= convert(@voc.wylie) %></font>
+    
+    <table class="table1">				  
+			<tr> 			
+				<td> <%= image_tag("tibflag_icon1.png") %> </td>
+				<td> <%= text_field_tags( "wylie", @voc.wylie, "white" ) %> </td>
+			</tr>
+			<tr> 
+				<td> <%= image_tag("deflag_icon.png")%> </td>
+				<td> <%= text_field_tags( "german", "", "gray" ) %> </td>				
+				<td> <%= my_submit_tag('ok') %> </td>
+			</tr>		
+		</table>	
+		
+	<% end %>	
+  
+	<%= render :partial => "link_to_quit" -%><br/>	
+<% end %>
+</div>

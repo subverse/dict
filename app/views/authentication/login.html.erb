@@ -1,0 +1,21 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "", :h2 => "login", :plain => "" } %>
+<h1>login</h1>
+<br>
+<div id="form">
+<% form_tag :controller => "authentication", :action => "check" do %>
+
+  <p>
+    <label for="user" >Benutzername</label>
+    <%= text_field_tag :user, "", :class => 'text_field'  %>
+  </p>
+
+  <p>
+    <label for="password" >Passwort</label>
+    <%= password_field_tag :password, "", :class => 'text_field'  %>
+  </p>
+  <div id="submit_btn"> 
+    <%= my_submit_tag "login" %>  
+	</div>
+<% end %>
+</div>

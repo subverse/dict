@@ -1,0 +1,6 @@
+<% if @vocs.length > 0 %>  
+	<div align="left">       	 
+		<h4><%=@search%></h4><br><br>			
+	</div>	
+	<%= render :partial => "layouts/list", :locals => {:vcs => @vocs} %>	
+<% end %>

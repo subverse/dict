@@ -1,0 +1,11 @@
+<br>
+<h1><%= @search %> (<%= @vocs.length %>)<br><br/></h1>
+<% if @vocs.length != 0 %> 
+  <%= render :partial => "layouts/list", :locals => {:vcs => @vocs} %>	
+<% end %>
+
+<% if @num_rest_rows!=0 %>
+  <br> 
+  <h1><%= @search + "..." %>  (<%= @num_rest_rows %>)<br><br></h1>
+  <%= render :partial => "layouts/list", :locals => {:vcs => @vocs_rest} %>   
+<% end %>  

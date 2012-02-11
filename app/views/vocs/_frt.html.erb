@@ -1,0 +1,6 @@
+<% form_remote_tag :update => "erg" ,
+				   :url => {:action => action} do %>
+  <%= image_tag(img)%>
+  <%= text_field_tag params_val, "", :class => "text_field" %>
+  <%= my_submit_tag submit_text %>  
+<% end %>

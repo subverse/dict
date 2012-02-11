@@ -1,0 +1,8 @@
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						:h1 => "Heute" ,
+						:h2 => "wurden #{@vocs.length} Eintr&auml;ge hinzugef&uuml;gt.",
+						:plain => "" } %>
+									
+<% if @vocs.length > 0 %>
+  <%= render :partial => "layouts/list", :locals => {:vcs => @vocs}%>
+<% end%>

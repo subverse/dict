@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  german: MyString
+  wylie: MyString
+  grm: MyString
+  cat: MyString
+  note: MyText
+
+two:
+  german: MyString
+  wylie: MyString
+  grm: MyString
+  cat: MyString
+  note: MyText

@@ -1,0 +1,31 @@
+<ul id = "show_data_de" title="Auswahl" selected="true"%>
+	<li class="group"><%= @voc.german %></li>
+	<li>
+		<%= link_to "#{@voc.wylie}",
+			:controller => :iphones, 
+			:action => :show_voc, 
+			:id => @voc.id %>			
+	</li>		 		
+	<li class="group"><%= @voc.german %> (<%= @vocs_syn_de.length %>)</li>
+	<% if true %>
+		<% @vocs_syn_de.each do |voc| %>
+			<li>
+				<%= link_to "#{voc.wylie}",
+					:controller => :iphones, 
+					:action => :show_voc, 
+					:id => voc.id %>				
+			</li>	
+		<% end %> 
+	<% end %>		
+	<li class="group"><%= @voc.wylie %> (<%= @vocs_syn_tib.length %>)</li>
+	<% if true %>
+		<% @vocs_syn_tib.each do |voc| %>
+			<li>
+				<%= link_to "#{voc.german}",
+					:controller => :iphones, 
+					:action => :show_voc, 
+					:id => voc.id %>				
+			</li>	
+		<% end %> 
+	<% end %>	
+</ul>	

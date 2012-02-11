@@ -1,0 +1,154 @@
+<% if link_category  == "dharma"%>
+  <table class="table1">
+    <tr>
+      <td><%= my_link_to_ext("Benchen Monastery Community", "http://www.benchen.org")  %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Karma Kagyu Gemeinschaft Heidelberg", "http://www.kcl-heidelberg.de") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Karma Kagyu Gemeinschaft Kamalashila", "http://www.kamalashila.de") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Karma Lekshey Ling Shedra", "http://www.leksheyling.net/") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Rangjung Yeshe Dharma Dictionary", "http://rywiki.tsadra.org/index.php/Main_Page") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Buddhistisches Zentrum Villingen", "http://www.buddha-vs.de") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Maitreya Institut Gutenstein", "http://www.maitreya.at") %></td>
+    </tr>
+  </table>
+<% end %>
+
+<% if link_category  == "dictionaries"%>
+  <table class="table1">
+    <tr>
+      <td><%= my_link_to_ext("Rangjung Yeshe Tibetan-English Dictionary", "http://www.nitartha.org/dictionary_search04.html") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("THDL Tibetan-English Dictionary", "http://old.thdl.org/tibetan/servlet/org.thdl.tib.scanner.OnLineScannerFilter?thdlBanner=on") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Tibetan-English-Dictionary of Buddhist Teaching & Practice", "http://www.diamondway-buddhism.org/default.asp?col=04&t=diction.htm") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("freelang English-Tibetan Dictionary", "http://www.freelang.net/online/tibetan.php") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("English to Tibetan online Dictionary", "http://eng-tib.zanwat.org") %></td>
+    </tr>
+  </table>
+<% end %>
+
+<% if link_category  == "broadcasting"%>
+  <table class="table1">
+    <tr>
+      <td><%= my_link_to_ext("tibetonline.tv", "http://www.tibetonline.tv") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("voanews.com", "http://www.voanews.com/tibetan/radio_programs.cfm") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("The Tibet Connection", "http://www.thetibetconnection.org") %></td>
+    </tr>
+  </table>
+<% end %>
+
+<% if link_category  == "lernen"%>
+  <table class="table1">
+    <tr>
+      <td><%= my_link_to_ext("Fernkurs Tibetisch", {:controller => 'generals', :action => 'fkt', :id => 1}) %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Einf&uuml;hrung in die tibetische Schriftsprache ", "http://www.tibetischesprache.de") %></td>
+    </tr>
+    <tr>
+      <td><%=my_link_to_ext("Lehrbuch der tibetischen Umgangs- und Schriftsprache", "http://www.tashi-verlag.com") %></td>
+    </tr>
+    <tr>
+      <td><%=my_link_to_ext("Tibetan alphabeth game", "http://www.digitaldialects.com/Tibetan/alphabet.htm") %></td>
+    </tr>
+  </table>
+<% end %>
+
+<% if link_category  == "tibet"%>
+  <table class="table1">
+  	<tr>
+      <td><%= my_link_to_ext("Tibetinitiative", "http://www.tibet-initiative.de/") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("SaveTibet Deutschland", "http://www.savetibet.de/") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("International Campain for Tibet Deutschland", "http://www.savetibet.de/") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("TibetSites", "http://www.tibetsites.com/") %></td>
+    </tr> 
+    <tr>
+      <td><%= my_link_to_ext("Tibethaus", "http://www.tibethaus.com/") %></td>
+    </tr>       
+    <tr>
+      <td><%= my_link_to_ext("Namtso Reisen", "http://www.namtso.org/") %></td>
+    </tr>    
+  </table>
+<% end %>
+
+<% if link_category  == "tools"%>
+  <table class="table1">
+    <tr>
+      <td><%= my_link_to_ext("Tibetan to English Dictionary and Translation Tool", "http://www.gaugeus.com/tibetan-to-english-translation-tool") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Pechamaker", "http://www.pechamaker.com") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Jskad", " https://collab.itc.virginia.edu/access/wiki/site/26a34146-33a6-48ce-001e-f16ce7908a6a/jskad%20editor.html") %></td>
+    <tr>
+    <tr>
+      <td><%= my_link_to_ext("BOD_X", "http://www.leonardo-gribaudo.it") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Clearlook", "http://software.rabten.eu/index.html") %></td>
+    </tr>
+  </table>
+<% end %>
+
+<% if link_category  == "tech"%>
+  <table class="table1">
+		<tr>
+      <td><%= my_link_to_ext("blog::tdwb", "http://tdwb.posterous.com/") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("framework::rails", "http://rubyonrails.org") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("editor::emacs", "http://www.gnu.org/software/emacs") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("plugin::w2uconv", "http://github.com/subverse") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("icons::visualpharm (most icons used on this site)", "http://www.visualpharm.com") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("svc::git", "http://git-scm.com") %></td>
+    </tr>
+
+  </table>
+<% end %>
+
+<% if link_category  == "natur"%>
+  <table class="table1">
+    <tr>
+      <td><%= my_link_to_ext("Sharkproject", "http://www.sharkproject.org") %></td>
+    </tr>
+    <tr>
+      <td><%= my_link_to_ext("Blue Peace Maledives", "http://www.bluepeacemaldives.org") %></td>
+    </tr>
+  </table>
+<% end %>

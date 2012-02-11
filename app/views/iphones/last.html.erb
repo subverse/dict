@@ -1,0 +1,12 @@
+<ul id = "today" title="Heute" selected="true">
+	<li class="group" > <%= @vocs.length %> Eintr&auml;ge hinzugef&uuml;gt. </li>
+	<% @vocs.each do |voc| %>
+		<li>
+			<%= link_to "#{voc.german}",
+				:controller => :iphones, 
+				:action => :show_voc, 
+				:id => voc.id %>
+			<%= "[#{voc.wylie}]" %>
+		</li>	
+	<% end %> 		
+</ul>	

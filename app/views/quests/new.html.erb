@@ -1,0 +1,15 @@
+<% @title = "quest" %>
+<br/>
+<div id="tst_div">		
+<h1>set quest :</h1>
+<br/>  
+		<% form_remote_tag :url => { :action => "set" }, :update => "tst_div" do %>
+				<%= text_field "num", "", :class => "text_field" %> (number)<br>	 		
+				<%= text_field "grm", "", :class => "text_field" %> (grammar)<br>		
+				<%= text_field "cat", "",  :class => "text_field" %> (category)<br>    
+				<%= text_field "length", "",  :class => "text_field" %> (length)<br> 			
+				<%= my_submit_tag "ok" %>				
+		<% end %>				
+</div>
+
+  

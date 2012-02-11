@@ -1,0 +1,10 @@
+﻿<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+													:h1 => "" , :h2 => "",
+													:plain => "Einträge : #{@vocs.length}"} %>
+<br/>
+<div id="erg"> 
+	<% if true or iphone? %>
+		<h2> Hier gehts zur </h2>
+		<h1><font size="20"><%= my_link_to_path("iphone", iphones_path) %></font> Version</h1>			
+    <% end %>
+</div>

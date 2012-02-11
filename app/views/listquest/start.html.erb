@@ -1,0 +1,22 @@
+<div id="form">	
+	
+	<table class="table1">        
+      <tr>
+        <td>Richtung</td>  
+        <td>:</td>
+        <td><%= @dir %></td>     
+      </tr>
+      <tr>
+        <td>Ordnung</td>  
+        <td>:</td>
+        <td><%= @order %></td>     
+      </tr>
+	</table>
+	
+	<div class = "line"></div>
+
+	<% form_remote_tag :url => { :action => "question" }, :update => "cont_div" do %>	
+		 <%= my_submit_tag('Start') %>				
+	<% end %>	
+	
+</div>

@@ -1,0 +1,11 @@
+<td> <%=h @v.german %> </td> 
+<td> <%=h @v.wylie %> </td>
+<% if @ind_font && @ind_tib %>
+  <td> <font size="5"><%= WylieConverter.convert(@v.wylie) %></font> </td>
+<% end %>
+<% if @ind_grm %>
+  <td> <%=h @v.grm %> </td>
+<% end %>  
+<% if @ind_cat %>
+  <td> <%=h @v.cat %> </td>
+<% end %>  

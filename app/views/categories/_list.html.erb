@@ -1,0 +1,13 @@
+<table class="table1">  
+<% @categories.each do |category| %>  
+  <tr>	      
+    <td><%=h category.cat %></td>  
+    <td><%= "(#{@h_cats_n.pop})" %></td>	
+    <td><%= my_link_to_show(category) %></td>		
+	  <%if admin? %>
+      <td><%= my_link_to_edit(edit_category_path(category)) %></td>
+      <td><%= my_link_to_drop(category,"cat") %></td>		
+	  <%end %>	
+  </tr>	
+<% end %> 
+</table>

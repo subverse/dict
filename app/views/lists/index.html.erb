@@ -1,0 +1,15 @@
+<% if @cookie %>
+	<% cookie_info = my_link_to("abfragen?", "listquest", "index", 1) %>
+<% else %>	
+	<% cookie_info = "Cookies vom Browser geblockt!" %>
+<% end %>
+
+<%= render :partial => "layouts/content_for", :locals => { :tag => "info", 
+						    :h1 => "eList (#{@list.length})", 
+						    :h2 => cookie_info,
+						    :plain => "" } %>
+<% if @cookie %>						    
+	<%= render :partial => "list", :locals => {:vcs => @list} %>
+<% else %>	
+	<h3> Hinweis : Zum Nutzen der eList m&uuml;ssen Cookies aktiviert sein! </h3>
+<% end %>

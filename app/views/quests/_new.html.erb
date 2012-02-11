@@ -1,0 +1,34 @@
+<br/><br/>
+<h1>Add vocs :</h1>
+<br/>
+<div id="form">
+<% form_remote_tag :url => { :action => "set" }, :update => "cont_div" do %>
+  <table class="table1">
+	  <tr>
+			<td> <b>Anzahl</b> </td>			
+			<td> <b> : </b> </td>
+			<td> <%= text_field "num", "", :class => "text_field" %> </td>
+    </tr>
+		<tr>
+		  <td> <b>Grammatik</b> </td>
+			<td> <b> : </b> </td>
+      <td> <%=select("grm", "grms", @grms, {:include_blank => true}, html_options = {:class => "select_field"})%> </td>		
+		</tr>
+		<tr>
+			<td> <b>Kategorie</b> </td>
+			<td> <b> : </b> </td>			
+      <td> <%=select("cat", "cats", @cats, {:include_blank => true}, html_options = {:class => "select_field"})%> </td>
+		</tr>
+		<tr>
+			<td> <b>Silben</b> </td>
+			<td> <b> : </b> </td>
+		  <td> <%= text_field "length", "",  :class => "text_field" %> </td> 		
+    </tr>
+	</table>	
+    <div id="submit_btn">		
+		  <%= my_submit_tag "ok" %>				
+		</div>	
+<% end %>				
+</div>
+
+  
